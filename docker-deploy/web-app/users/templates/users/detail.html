@@ -1,0 +1,31 @@
+{% extends "mysite/base.html" %}
+{% block content %}
+<div class="media-body">
+    <div class="article-metadata">
+        <a class="mr-2" > Ride owner: {{ ride.owner}}</a></br>
+        ride info:</br>
+        destination:<small class="text-muted">{{ ride.destination}}</small></br>
+        arrive time:<small class="text-muted">{{ ride.arrival_time}}</small></br>
+        status:<small class="text-muted">{{ ride.status}}</small></br>
+        special info: <small class="text-muted">{{ ride.status}}</small></br>
+        party: <small class="text-muted">{{ ride.party}}</small></br>
+
+        <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url  'edit_ride' ride.id %}">Edit</a></br>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url  'cancel_ride' ride.id %}">Cancel</a>
+        </div>
+        <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'complete_ride' ride.id %}">Complete</a>
+        </div>
+        <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'confirm_ride' ride.id %}">Confirm</a>
+        </div>
+        <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'cancel_ride' ride.id %}">Cancel</a>
+        </div>
+        <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'join_ride' ride.id %}">Join</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
